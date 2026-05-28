@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>해외직구 관세 계산기 | 생활계산소</title>
+  <meta name="description" content="관세청 면세 기준 안내를 바탕으로 해외직구 물품의 예상 관세와 부가세를 간이 계산합니다.">
+  <meta property="og:title" content="해외직구 관세 계산기 | 생활계산소">
+  <meta property="og:description" content="면세 기준과 입력한 관세율을 바탕으로 해외직구 예상 관세와 부가세를 간이 계산합니다.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/customs.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html" aria-label="생활계산소 홈"><img class="brand-icon" src="assets/calculator-mark.svg" alt=""><span class="brand-name">생활계산소</span></a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="index.html#calculator">생활 계산</a><a href="customs.html" aria-current="page">관세 계산</a><a href="lotto.html">로또 번호</a><a href="guide.html">계산 기준</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">해외직구 · 예상 세액</p>
+        <h1>해외직구 관세 계산기</h1>
+        <p>물품가격, 국제배송비, 적용할 관세율을 입력해 관세와 부가세를 간이 계산합니다. 통관 시점의 세율과 환율에 따라 실제 금액은 달라질 수 있습니다.</p>
+      </div>
+    </section>
+    <section class="tool-page">
+      <div class="container">
+        <div class="tool-layout" id="customsCalculator">
+          <div class="form-card">
+            <h2>구매 정보 입력</h2>
+            <p class="panel-description">목록통관 제외 품목, FTA 세율, 개별소비세 등은 관세청 조회에서 별도로 확인하세요.</p>
+            <div class="fields">
+              <div class="field">
+                <label for="origin">발송 국가 및 통관 조건</label>
+                <select id="origin">
+                  <option value="other">미국 외 국가 또는 일반 수입신고</option>
+                  <option value="us">미국발 특송 물품</option>
+                </select>
+              </div>
+              <label class="check-option" id="usEligibilityWrap">
+                <input id="listEligible" type="checkbox" disabled>
+                <span>미국발 목록통관 대상 물품입니다. 목록통관 배제 품목이 아닌 경우에만 선택하세요.</span>
+              </label>
+              <div class="inline-fields">
+                <div class="field">
+                  <label for="goodsUSD">물품가격 (USD)</label>
+                  <input id="goodsUSD" type="number" min="0" value="180">
+                </div>
+                <div class="field">
+                  <label for="shippingUSD">국제배송비·보험료 (USD)</label>
+                  <input id="shippingUSD" type="number" min="0" value="20">
+                </div>
+              </div>
+              <div class="inline-fields">
+                <div class="field">
+                  <label for="customsExchange">적용 환율 (원/USD)</label>
+                  <input id="customsExchange" type="number" min="1" value="1380">
+                </div>
+                <div class="field">
+                  <label for="dutyRate">적용 관세율 (%)</label>
+                  <input id="dutyRate" type="number" min="0" max="100" value="13">
+                </div>
+              </div>
+              <div>
+                <p class="result-title">관세율 빠른 입력 예시</p>
+                <div class="selection-grid" aria-label="관세율 예시 선택">
+                  <button class="selection-button" type="button" aria-pressed="true" data-customs-rate="13">13% 입력</button>
+                  <button class="selection-button" type="button" aria-pressed="false" data-customs-rate="8">8% 입력</button>
+                </div>
+                <p class="micro-note">관세율은 품목분류(HS CODE), 원산지와 적용 협정에 따라 달라집니다.</p>
+              </div>
+            </div>
+            <p class="validation" id="customsError" hidden></p>
+          </div>
+          <aside class="result-card" aria-live="polite">
+            <h2>예상 비용</h2>
+            <span class="status-pill" id="taxStatus">과세 여부 확인 중</span>
+            <div class="result-list">
+              <div class="result-line"><span>적용 면세 기준</span><b id="threshold">$150</b></div>
+              <div class="result-line"><span>물품가격 환산</span><b><output id="goodsKRW">0</output>원</b></div>
+              <div class="result-line"><span>과세가격 환산</span><b><output id="taxableBase">0</output>원</b></div>
+              <div class="result-line"><span>예상 관세</span><b><output id="dutyAmount">0</output>원</b></div>
+              <div class="result-line"><span>예상 부가세</span><b><output id="vatAmount">0</output>원</b></div>
+            </div>
+            <div class="result-total">
+              총 예상 지출액
+              <output id="customsTotal">0원</output>
+            </div>
+            <p class="result-note" id="taxDescription"></p>
+            <a class="reference-link" href="https://www.customs.go.kr/kcs/ad/tax/BuyTaxCalculation.do" target="_blank" rel="noopener">관세청 해외직구물품 예상세액 조회 →</a>
+          </aside>
+        </div>
+        <div class="ad-area" aria-label="광고 영역">광고 영역 · 승인 후 Google AdSense 코드를 이 위치에 연결하세요</div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">계산 전 확인사항</p>
+          <h2>면세 기준과 계산 범위</h2>
+        </div>
+        <div class="info-grid">
+          <article class="info-card">
+            <h3>일반 기준 150달러</h3>
+            <p>자가사용 물품의 수입신고 면세 기준은 물품가격 미화 150달러 이하입니다.</p>
+          </article>
+          <article class="info-card">
+            <h3>미국발 목록통관 200달러</h3>
+            <p>미국에서 발송되는 목록통관 대상 물품은 물품가격 미화 200달러 이하 기준이 적용될 수 있습니다.</p>
+          </article>
+          <article class="info-card">
+            <h3>초과 시 전체 과세가격</h3>
+            <p>기준을 초과하면 국제배송비와 보험료 등을 포함한 총과세가격에 대해 과세될 수 있습니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="section soft">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">사용 안내</p>
+          <h2>해외직구 관세 계산기 사용 방법</h2>
+          <p>면세 가능 여부와 예상 세액을 살펴보는 순서입니다.</p>
+        </div>
+        <div class="instruction-grid">
+          <article class="instruction-card">
+            <h3>계산 순서</h3>
+            <ol class="steps">
+              <li>발송 국가와 통관 조건을 선택합니다.</li>
+              <li>물품가격과 국제배송비·보험료를 USD 기준으로 입력합니다.</li>
+              <li>통관에 적용할 환율과 품목의 예상 관세율을 입력합니다.</li>
+              <li>면세 기준, 예상 관세·부가세와 총 지출액을 확인합니다.</li>
+              <li>실제 주문 또는 통관 전에는 관세청 예상세액 조회로 다시 확인합니다.</li>
+            </ol>
+          </article>
+          <aside class="caution-box">
+            <h3>※ 참고사항</h3>
+            <p>본 계산기는 입력한 관세율을 기준으로 계산하는 <strong>간이 예상 도구</strong>입니다. 실제 세액은 품목분류(HS CODE), 원산지, FTA 적용, 통관 시점의 환율과 세율에 따라 달라질 수 있습니다.</p>
+            <p>일반 자가사용 물품은 물품가격 미화 <strong>150달러 이하</strong> 기준이 적용되며, 미국발 목록통관 대상 물품은 미화 <strong>200달러 이하</strong> 기준이 적용될 수 있습니다. 식품, 의약품 등 목록통관 배제 품목은 다르게 처리될 수 있습니다.</p>
+            <p>면세 기준을 초과하는 경우에는 입력한 국제배송비·보험료를 포함한 과세가격을 기준으로 계산되며, 개별소비세 등 별도 세금은 이 도구에 포함되지 않습니다.</p>
+            <p><a class="reference-link" href="https://www.customs.go.kr/kcs/ad/tax/BuyTaxCalculation.do" target="_blank" rel="noopener">관세청 해외직구물품 예상세액 조회에서 공식 확인 →</a></p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><div class="footer-brand">생활계산소</div><p>생활계산소는 할인율, 만나이, 날짜계산, 관세처럼 일상에서 자주 필요한 수치를 간편하게 확인할 수 있는 무료 생활 계산 서비스입니다.</p></div>
+        <div class="footer-links"><strong>서비스</strong><a href="index.html#calculator">생활 계산</a><a href="customs.html">관세 계산기</a><a href="lotto.html">로또 번호 생성기</a><a href="guide.html">계산 기준</a></div>
+        <div class="footer-links"><strong>정책 및 문의</strong><a href="about.html">사이트 소개</a><a href="privacy.html">개인정보처리방침</a><a href="contact.html">문의</a></div>
+      </div>
+      <div class="copyright">© 2026 생활계산소. 계산 결과는 참고용이며 공식 증빙이 아닙니다.</div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>로또 번호 무작위 생성기 | 생활계산소</title>
+  <meta name="description" content="포함할 번호와 제외할 번호를 선택해 로또6/45 방식의 번호 6개를 무작위로 생성하는 무료 도구입니다.">
+  <meta property="og:title" content="로또 번호 무작위 생성기 | 생활계산소">
+  <meta property="og:description" content="1부터 45까지 중복 없는 번호 6개를 조건에 맞춰 무작위로 생성해 보세요.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css?v=20260528-lotto">
+  <script src="assets/lotto.js?v=20260528" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html" aria-label="생활계산소 홈"><img class="brand-icon" src="assets/calculator-mark.svg" alt=""><span class="brand-name">생활계산소</span></a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="index.html#calculator">생활 계산</a><a href="customs.html">관세 계산</a><a href="lotto.html" aria-current="page">로또 번호</a><a href="guide.html">계산 기준</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="page-hero lotto-hero">
+      <div class="container">
+        <p class="eyebrow">무작위 추첨 · 포함/제외 선택</p>
+        <h1>로또 번호 무작위 생성기</h1>
+        <p>포함하거나 제외할 번호를 선택한 뒤, 로또6/45 방식의 번호 6개를 무작위로 생성하세요.</p>
+      </div>
+    </section>
+    <section class="tool-page">
+      <div class="container">
+        <div class="lotto-tool" id="lottoTool">
+          <div class="lotto-select-grid">
+            <section class="lotto-select-card">
+              <div class="lotto-card-heading">
+                <div><p class="eyebrow">반드시 포함</p><h2>포함할 번호</h2></div>
+                <button class="plain-action" id="clearIncluded" type="button">전체 해제</button>
+              </div>
+              <p class="panel-description">선택한 번호는 생성 결과에 포함됩니다. 최대 6개까지 선택할 수 있습니다.</p>
+              <div class="lotto-number-grid include" id="includeNumbers" aria-label="포함할 번호 선택"></div>
+            </section>
+            <section class="lotto-select-card">
+              <div class="lotto-card-heading">
+                <div><p class="eyebrow exclude">결과에서 제외</p><h2>제외할 번호</h2></div>
+                <button class="plain-action" id="clearExcluded" type="button">전체 해제</button>
+              </div>
+              <p class="panel-description">선택한 번호는 생성 결과에 나오지 않습니다.</p>
+              <div class="lotto-number-grid exclude" id="excludeNumbers" aria-label="제외할 번호 선택"></div>
+            </section>
+          </div>
+          <div class="lotto-actions">
+            <button class="button primary lotto-generate" id="generateLotto" type="button">번호 6개 생성하기</button>
+            <p class="validation" id="lottoError" hidden></p>
+          </div>
+          <section class="lotto-result" id="lottoResultSection" aria-live="polite">
+            <p class="eyebrow">생성 결과</p>
+            <h2>무작위 번호</h2>
+            <div class="lotto-balls" id="lottoBalls" aria-label="생성된 번호"></div>
+            <div class="actions lotto-result-actions">
+              <button class="button" id="copyLotto" type="button">번호 복사하기</button>
+              <button class="button primary" id="regenerateLotto" type="button">다시 생성</button>
+            </div>
+            <p class="micro-note" id="lottoNotice">아직 번호를 생성하지 않았습니다.</p>
+          </section>
+        </div>
+        <section class="lotto-guide-card" aria-labelledby="lottoUsageTitle">
+          <p class="eyebrow">이용 안내</p>
+          <h2 id="lottoUsageTitle">로또번호 생성기 사용 방법</h2>
+          <ol class="lotto-steps">
+            <li><strong>포함할 번호</strong>에서 결과에 반드시 넣고 싶은 번호를 선택합니다. 선택하지 않아도 바로 생성할 수 있습니다.</li>
+            <li><strong>제외할 번호</strong>에서 결과에 나오지 않게 할 번호를 선택합니다.</li>
+            <li><strong>번호 6개 생성하기</strong>를 누르면 조건을 반영한 중복 없는 번호 6개가 무작위로 생성됩니다.</li>
+            <li><strong>번호 복사하기</strong>로 결과를 복사하거나, <strong>다시 생성</strong>으로 새 조합을 확인할 수 있습니다.</li>
+          </ol>
+          <p class="micro-note">포함·제외 선택값과 생성 결과는 브라우저 안에서만 처리되며 별도로 저장하지 않습니다. 생성 번호는 참고용이며 당첨을 예측하거나 보장하지 않습니다.</p>
+        </section>
+        <!-- AdSense placement: 로또 번호 생성기 하단 광고 코드 삽입 위치 -->
+      </div>
+    </section>
+    <section class="section soft">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">읽어보기</p>
+          <h2>번호 생성과 당첨금 안내</h2>
+          <p>번호 조합을 살펴보는 방법과 당첨금 과세 기준을 함께 확인해보세요.</p>
+        </div>
+        <article class="lotto-detail-card" aria-labelledby="lottoPatternTitle">
+          <p class="eyebrow">참고용 조합 확인</p>
+          <h3 id="lottoPatternTitle">로또번호 패턴 분석 방법</h3>
+          <p>생성된 번호를 정리해 볼 때는 홀수와 짝수의 개수, 낮은 번호(1~22)와 높은 번호(23~45)의 개수, 연속 번호 여부, 여섯 번호의 합계를 살펴볼 수 있습니다.</p>
+          <div class="lotto-pattern-grid">
+            <div><strong>홀짝 비율</strong><span>홀수와 짝수가 몇 개씩 포함되었는지 확인합니다.</span></div>
+            <div><strong>고저 비율</strong><span>1~22번과 23~45번의 분포를 확인합니다.</span></div>
+            <div><strong>연속 번호</strong><span>예: 14, 15처럼 이어지는 번호가 있는지 살펴봅니다.</span></div>
+            <div><strong>번호 합계</strong><span>생성된 여섯 번호의 합계를 참고로 확인합니다.</span></div>
+          </div>
+          <p class="lotto-caution">주의: 모든 유효한 번호 조합의 추첨 확률은 동일합니다. 패턴은 조합을 보기 쉽게 분류하는 참고 정보이며, 특정 비율이나 합계가 당첨 확률을 높이지 않습니다.</p>
+        </article>
+        <article class="lotto-detail-card tax-card" aria-labelledby="lottoTaxTitle">
+          <p class="eyebrow">지급 시 원천징수</p>
+          <h3 id="lottoTaxTitle">복권 당첨금 세금 계산법 (2026년 기준)</h3>
+          <p>복권 당첨금은 지급 시점에 세금이 원천징수됩니다. 동행복권 안내와 현행 과세 기준에 따르면 건별 당첨금이 200만원 이하인 경우 과세하지 않으며, 200만원을 초과하면 다음 세율이 적용됩니다.</p>
+          <div class="lotto-tax-table" role="table" aria-label="복권 당첨금 과세 구간">
+            <div class="tax-row heading" role="row"><span role="columnheader">당첨금 구간</span><span role="columnheader">적용 세율</span></div>
+            <div class="tax-row" role="row"><span role="cell">200만원 이하</span><strong role="cell">비과세</strong></div>
+            <div class="tax-row" role="row"><span role="cell">200만원 초과 ~ 3억원 이하</span><strong role="cell">22%</strong></div>
+            <div class="tax-row" role="row"><span role="cell">3억원 초과분</span><strong role="cell">33%</strong></div>
+          </div>
+          <div class="tax-example">
+            <strong>예시: 당첨금 10억원</strong>
+            <p>3억원 x 22% = 6,600만원, 초과분 7억원 x 33% = 2억 3,100만원으로 계산해, 세금 합계는 2억 9,700만원이며 세후 금액은 7억 300만원입니다.</p>
+          </div>
+          <p class="micro-note">세율 안내는 2026년 기준 일반적인 계산 예시입니다. 실제 지급액과 적용 여부는 수령 시점의 법령 및 <a href="https://www.dhlottery.co.kr/" target="_blank" rel="noopener noreferrer">동행복권 공식 안내</a>를 확인하세요.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><div class="footer-brand">생활계산소</div><p>생활계산소는 할인율, 만나이, 날짜계산, 관세처럼 일상에서 자주 필요한 수치를 간편하게 확인할 수 있는 무료 생활 계산 서비스입니다.</p></div>
+        <div class="footer-links"><strong>서비스</strong><a href="index.html#calculator">생활 계산</a><a href="customs.html">관세 계산기</a><a href="lotto.html">로또 번호 생성기</a><a href="guide.html">계산 기준</a></div>
+        <div class="footer-links"><strong>정책 및 문의</strong><a href="about.html">사이트 소개</a><a href="privacy.html">개인정보처리방침</a><a href="contact.html">문의</a></div>
+      </div>
+      <div class="copyright">© 2026 생활계산소. 생성 번호는 참고용이며 당첨을 보장하지 않습니다.</div>
+    </div>
+  </footer>
+</body>
+</html>

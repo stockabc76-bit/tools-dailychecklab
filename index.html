@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>생활계산소 - 할인율·만나이·D-day·관세 계산 도구</title>
+  <meta name="description" content="생활계산소는 할인율, 만나이, D-day, 관세 계산처럼 일상에서 자주 필요한 계산을 빠르게 확인할 수 있는 무료 생활 계산 도구입니다. 입력값은 브라우저에서 계산되며 별도로 저장하지 않습니다.">
+  <meta property="og:title" content="생활계산소 - 할인율·만나이·D-day·관세 계산 도구">
+  <meta property="og:description" content="생활계산소는 할인율, 만나이, D-day, 관세 계산처럼 일상에서 자주 필요한 계산을 빠르게 확인할 수 있는 무료 생활 계산 도구입니다.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css?v=20260528-lotto">
+  <script src="assets/app.js?v=20260527-links" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html" aria-label="생활계산소 홈">
+        <img class="brand-icon" src="assets/calculator-mark.svg" alt="">
+        <span class="brand-name">생활계산소</span>
+      </a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="#calculator">생활 계산</a>
+        <a href="customs.html">관세 계산</a>
+        <a href="lotto.html">로또 번호</a>
+        <a href="guide.html">계산 기준</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">일상에 필요한 무료 계산 도구</p>
+          <h1>일상에 필요한 계산을<br>더 빠르고 분명하게</h1>
+          <p class="lead">쇼핑 할인액부터 만나이, 해외직구 예상 세액과 로또 번호 생성까지, 자주 필요한 생활 도구를 이해하기 쉬운 안내와 함께 제공합니다.</p>
+          <div class="actions">
+            <a class="button primary" href="#calculator">바로 계산하기</a>
+            <a class="button" href="guide.html">계산 기준 보기</a>
+          </div>
+          <ul class="trust-pills" aria-label="사이트 특징">
+            <li>입력값 저장 없음</li>
+            <li>브라우저에서 계산</li>
+            <li>무료 이용</li>
+          </ul>
+        </div>
+        <div class="preview showcase" data-showcase aria-label="생활계산소 주요 기능 미리보기">
+          <figure class="showcase-slide is-active" data-showcase-slide>
+            <a class="showcase-link" href="#calculator" data-calculator-tab="discountTab" aria-label="할인율, 만나이, D-day 계산기로 이동">
+              <img src="assets/hero-calculators.png?v=20260527-topcrop" alt="할인율, 만나이, D-day 계산 기능 미리보기" fetchpriority="high">
+            </a>
+          </figure>
+          <figure class="showcase-slide" data-showcase-slide>
+            <a class="showcase-link" href="customs.html" aria-label="해외직구 관세 계산기로 이동">
+              <img src="assets/hero-customs.png?v=20260527-topcrop" alt="해외직구 관세 계산 기능 미리보기">
+            </a>
+          </figure>
+          <figure class="showcase-slide" data-showcase-slide>
+            <a class="showcase-link" href="lotto.html" aria-label="로또 번호 무작위 생성기로 이동">
+              <div class="lotto-showcase">
+                <p class="eyebrow">무작위 번호 생성</p>
+                <h3>로또 번호 생성기</h3>
+                <p>포함·제외 번호를 정하고<br>번호 6개를 만들어보세요.</p>
+                <div class="lotto-showcase-balls" aria-hidden="true">
+                  <span>7</span><span>14</span><span>22</span><span>31</span><span>38</span><span>44</span>
+                </div>
+                <strong>생성하기 →</strong>
+              </div>
+            </a>
+          </figure>
+          <div class="showcase-controls" aria-label="기능 미리보기 선택">
+            <button class="showcase-dot is-active" type="button" data-showcase-dot aria-label="할인율, 만나이, D-day 미리보기 보기" aria-current="true"></button>
+            <button class="showcase-dot" type="button" data-showcase-dot aria-label="해외직구 관세 미리보기 보기" aria-current="false"></button>
+            <button class="showcase-dot" type="button" data-showcase-dot aria-label="로또 번호 미리보기 보기" aria-current="false"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="notice">
+      <div class="container">
+        <strong>참고용 도구입니다.</strong>
+        계약, 행정 또는 증빙에 사용하는 수치는 관련 기관의 공식 기준을 함께 확인하세요.
+      </div>
+    </aside>
+
+    <section class="section soft" id="calculator">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">생활 계산기</p>
+          <h2>무엇을 계산해 볼까요?</h2>
+          <p>계산기와 번호 생성기는 현재 브라우저에서 작동하며 입력값을 별도로 저장하지 않습니다.</p>
+        </div>
+
+        <div class="calculator-box">
+          <div class="tabs" id="calculatorTabs" role="tablist" aria-label="계산기 선택">
+            <button class="tab" role="tab" aria-selected="true" aria-controls="discountPanel" id="discountTab">할인율</button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="agePanel" id="ageTab">만나이</button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="datePanel" id="dateTab">D-day</button>
+          </div>
+
+          <section class="panel" id="discountPanel" role="tabpanel" aria-labelledby="discountTab">
+            <div>
+              <h3>할인율 계산기</h3>
+              <p class="panel-description">가격에 적용되는 할인 금액과 최종 가격을 바로 확인하세요.</p>
+              <div class="fields">
+                <div class="field">
+                  <label for="originalPrice">원래 가격 (원)</label>
+                  <input id="originalPrice" type="number" min="0" value="100000" inputmode="numeric">
+                </div>
+                <div class="field">
+                  <label for="discountRate">할인율 (%)</label>
+                  <input id="discountRate" type="number" min="0" max="100" value="20" inputmode="decimal">
+                  <div class="quick-buttons" aria-label="할인율 빠른 선택">
+                    <button type="button" data-rate="10">10%</button>
+                    <button type="button" data-rate="20">20%</button>
+                    <button type="button" data-rate="30">30%</button>
+                    <button type="button" data-rate="50">50%</button>
+                  </div>
+                </div>
+              </div>
+              <p class="validation" id="discountError" hidden></p>
+            </div>
+            <div class="result">
+              <p class="result-title">계산 결과</p>
+              <div class="metric">
+                <span>할인 금액</span>
+                <output id="discountAmount">20,000</output><small>원</small>
+              </div>
+              <div class="metric blue">
+                <span>최종 가격</span>
+                <output id="finalPrice">80,000</output><small>원</small>
+              </div>
+              <p class="result-note">계산식: 원래 가격 x 할인율 / 100</p>
+            </div>
+          </section>
+
+          <section class="panel" id="agePanel" role="tabpanel" aria-labelledby="ageTab" hidden>
+            <div>
+              <h3>만나이 계산기</h3>
+              <p class="panel-description">법적·행정적으로 사용하는 만 나이와 전통적인 세는나이를 함께 봅니다.</p>
+              <div class="fields">
+                <div class="field">
+                  <label for="birthDate">생년월일</label>
+                  <input id="birthDate" type="date" value="1990-01-01">
+                </div>
+                <div class="field">
+                  <label for="baseDate">기준 날짜</label>
+                  <input id="baseDate" type="date">
+                </div>
+              </div>
+              <p class="validation" id="ageError" hidden></p>
+            </div>
+            <div class="result">
+              <p class="result-title">나이 계산 결과</p>
+              <div class="metric">
+                <span>만 나이</span>
+                <output id="internationalAge">0</output><small>세</small>
+              </div>
+              <div class="metric blue">
+                <span>세는나이</span>
+                <output id="countingAge">0</output><small>세</small>
+              </div>
+              <p class="result-note">한국의 행정·법률상 나이는 원칙적으로 만 나이를 사용합니다.</p>
+            </div>
+          </section>
+
+          <section class="panel" id="datePanel" role="tabpanel" aria-labelledby="dateTab" hidden>
+            <div>
+              <h3>D-day 계산기</h3>
+              <p class="panel-description">여행, 시험, 기념일 등 목표일까지 남은 날짜를 확인하세요.</p>
+              <div class="fields">
+                <div class="field">
+                  <label for="startDate">시작일</label>
+                  <input id="startDate" type="date">
+                </div>
+                <div class="field">
+                  <label for="endDate">목표일</label>
+                  <input id="endDate" type="date" value="2026-12-31">
+                </div>
+              </div>
+              <p class="validation" id="dateError" hidden></p>
+            </div>
+            <div class="result">
+              <p class="result-title">날짜 계산 결과</p>
+              <div class="metric">
+                <span>D-day 표시</span>
+                <output id="dayDifference">D-0</output>
+              </div>
+              <div class="metric orange">
+                <span>총 날짜 차이</span>
+                <output id="totalDays">0</output><small>일</small>
+              </div>
+              <p class="result-note" id="dayStatus">목표일까지 남은 기간입니다.</p>
+            </div>
+          </section>
+        </div>
+
+        <div class="tool-intro linked-tools">
+          <a class="tool-card" href="customs.html">
+            <span>해외직구 · 세액</span>
+            <h3>관세 계산기</h3>
+            <p>발송 국가와 면세 조건을 반영해 예상 관세와 부가세를 간이 계산합니다.</p>
+            <span class="tool-link">계산하기 →</span>
+          </a>
+          <a class="tool-card" href="lotto.html">
+            <span>번호 · 무작위 생성</span>
+            <h3>로또 번호 생성기</h3>
+            <p>포함·제외 번호를 선택해 중복 없는 번호 6개를 무작위로 생성합니다.</p>
+            <span class="tool-link">생성하기 →</span>
+          </a>
+        </div>
+
+        <div class="ad-area" aria-label="광고 영역">
+          광고 영역 · 승인 후 Google AdSense 코드를 이 위치에 연결하세요
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">신뢰 안내</p>
+          <h2>결과를 이해하고 사용할 수 있도록</h2>
+          <p>작은 계산이라도 기준과 개인정보 처리를 분명히 안내합니다.</p>
+        </div>
+        <div class="info-grid">
+          <article class="info-card">
+            <h3>계산식 공개</h3>
+            <p>각 계산 도구의 입력값과 계산 방식을 계산 기준 페이지에서 쉽게 확인할 수 있습니다.</p>
+          </article>
+          <article class="info-card">
+            <h3>입력값 저장 없음</h3>
+            <p>가격, 생년월일, 날짜 정보는 브라우저에서 계산하며 별도로 수집하거나 보관하지 않습니다.</p>
+          </article>
+          <article class="info-card">
+            <h3>공식 확인 권장</h3>
+            <p>계약, 서류 작성 또는 행정 목적이라면 결과를 공식 안내와 다시 대조하세요.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">먼저 읽어보세요</p>
+          <h2>계산기를 더 알맞게 사용하는 방법</h2>
+        </div>
+        <div class="article-grid">
+          <article class="article-card">
+            <h3>할인율은 어떻게 계산할까?</h3>
+            <p>퍼센트 할인과 최종 결제 금액을 비교하는 기본 계산식을 소개합니다.</p>
+            <a href="guide.html#discount">내용 보기 →</a>
+          </article>
+          <article class="article-card">
+            <h3>만나이와 세는나이 차이</h3>
+            <p>기준일에 생일이 지났는지에 따라 만나이가 달라지는 이유를 설명합니다.</p>
+            <a href="guide.html#age">내용 보기 →</a>
+          </article>
+          <article class="article-card">
+            <h3>D-day 표시 읽는 방법</h3>
+            <p>D-10, D-Day, D+10이 각각 어떤 날짜 상태를 뜻하는지 확인합니다.</p>
+            <a href="guide.html#dday">내용 보기 →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">생활계산소</div>
+          <p>생활계산소는 할인율, 만나이, 날짜계산, 관세처럼 일상에서 자주 필요한 수치를 간편하게 확인할 수 있는 무료 생활 계산 서비스입니다.</p>
+        </div>
+        <div class="footer-links">
+          <strong>서비스</strong>
+          <a href="index.html#calculator">계산기</a>
+          <a href="customs.html">관세 계산기</a>
+          <a href="lotto.html">로또 번호 생성기</a>
+          <a href="guide.html">계산 기준</a>
+          <a href="about.html">사이트 소개</a>
+        </div>
+        <div class="footer-links">
+          <strong>정책 및 문의</strong>
+          <a href="privacy.html">개인정보처리방침</a>
+          <a href="contact.html">문의</a>
+        </div>
+      </div>
+      <div class="copyright">© 2026 생활계산소. 계산 결과는 참고용이며 공식 증빙이 아닙니다.</div>
+    </div>
+  </footer>
+</body>
+</html>
