@@ -1,1 +1,4 @@
 *.png
+!assets/hero-calculators.png
+!assets/hero-customs.png
+!assets/hero-receipt-ocr.png
