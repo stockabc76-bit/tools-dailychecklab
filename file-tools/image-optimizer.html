@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>이미지 최적화 | 파일도구 계산소</title>
+  <meta name="description" content="파일도구 계산소의 이미지 최적화 도구는 JPG, PNG, WebP 이미지를 리사이즈하고 품질을 조절해 브라우저에서 가벼운 JPG 사본을 만듭니다. 입력한 파일은 서버에 저장하지 않습니다.">
+  <meta property="og:title" content="이미지 최적화 | 파일도구 계산소">
+  <meta property="og:description" content="이미지 최대 너비와 품질을 조절해 더 가벼운 JPG 사본을 브라우저에서 바로 다운로드하세요.">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="image">
+  <header class="site-header">
+    <nav class="nav container" aria-label="주요 메뉴">
+      <a class="brand" href="index.html"><img class="brand-logo" src="assets/brand/logo-filetool.png" alt="파일도구 계산소"></a>
+      <div class="nav-links"><a href="index.html">홈</a><a href="image-optimizer.html" aria-current="page">이미지 최적화</a><a href="exif-remover.html">EXIF 제거</a><a href="logo-bw-converter.html">로고 흑백</a><a href="color-picker.html">색상 추출</a><a href="korean-counter.html">글자수</a><a href="guide.html">사용 가이드</a></div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">브라우저 이미지 처리</span>
+        <h1>이미지 용량을 빠르게 줄이세요</h1>
+        <p>최대 너비와 JPG 품질을 조절해 블로그, 쇼핑몰, 문서 첨부에 맞는 가벼운 이미지로 변환합니다.</p>
+        <div class="trust-pills"><span class="trust-pill">브라우저 처리</span><span class="trust-pill soft">서버 업로드 없음</span><span class="trust-pill soft">입력값 저장 없음</span><span class="trust-pill soft">무료 이용</span><span class="trust-pill soft">결과는 참고용</span></div>
+      </div>
+    </section>
+
+    <section class="tool-section">
+      <div class="container tool-layout">
+        <div class="panel">
+          <div id="imageDropzone" class="dropzone">
+            <div><div class="big-icon">IMG</div><h2>이미지 선택 또는 드래그</h2><p class="small">JPG, PNG, WebP 지원</p></div>
+            <input id="imageInput" type="file" accept="image/*" hidden>
+          </div>
+          <p id="status" class="small">파일을 선택하면 자동으로 최적화합니다.</p>
+        </div>
+        <div class="panel dense-panel">
+          <h2>최적화 설정</h2>
+          <div class="field"><label for="maxWidth">최대 너비(px)</label><div class="range-row"><input id="maxWidth" type="range" min="320" max="2400" step="40" value="1200"><input id="maxWidthValue" type="number" value="1200"></div></div>
+          <div class="field"><label for="quality">품질(%)</label><div class="range-row"><input id="quality" type="range" min="45" max="95" step="5" value="80"><input id="qualityValue" type="number" value="80"></div></div>
+          <div class="option-grid">
+            <div class="option-card"><strong>웹 게시</strong><span>1200px / 80%부터 확인해 보세요.</span></div>
+            <div class="option-card"><strong>문서 첨부</strong><span>1600px 이상이면 글자 이미지가 또렷합니다.</span></div>
+            <div class="option-card"><strong>작은 용량</strong><span>70% 안팎은 용량 절감에 유리합니다.</span></div>
+          </div>
+          <div id="resultPanel" class="hidden">
+            <div class="result-grid">
+              <div class="result-box"><span>파일명</span><strong id="fileName">-</strong></div>
+              <div class="result-box"><span>원본</span><strong id="originalSize">-</strong></div>
+              <div class="result-box"><span>절감률</span><strong id="savingRate">-</strong></div>
+            </div>
+            <div class="actions"><button id="downloadImage" class="btn" disabled>최적화 이미지 다운로드</button></div>
+            <div class="tool-layout" style="margin-top:18px"><img id="originalPreview" class="preview-img" alt="원본 미리보기"><img id="optimizedPreview" class="preview-img" alt="최적화 미리보기"></div>
+            <p class="small">최적화 파일 크기: <strong id="optimizedSize">-</strong></p>
+          </div>
+          <div class="placeholder-box" id="imagePlaceholder">이미지를 선택하면<br>원본과 최적화 결과가 이 영역에 표시됩니다.</div>
+          <p class="small">최적화 결과는 용량을 줄인 사본입니다. 중요한 원본 이미지는 별도로 보관해 주세요.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="guide">
+      <div class="container">
+        <div class="section-head"><h2>사용 방법과 품질 기준</h2><p>용도에 따라 너비와 품질을 조절하면 불필요한 용량을 줄일 수 있습니다.</p></div>
+        <div class="feature-grid">
+          <div class="feature"><span class="feature-icon">1</span><h3>이미지 선택</h3><p>원본 이미지를 선택하면 원본과 최적화 미리보기가 표시됩니다.</p></div>
+          <div class="feature"><span class="feature-icon">2</span><h3>너비 조절</h3><p>웹 게시용은 1000~1600px 사이에서 먼저 확인해 보세요.</p></div>
+          <div class="feature"><span class="feature-icon">3</span><h3>품질 확인</h3><p>70~85% 품질은 대체로 용량과 선명도의 균형을 잡기 좋습니다.</p></div>
+        </div>
+        <div class="callout">PNG 투명 이미지도 JPG로 저장되므로 투명 배경이 필요한 로고나 아이콘은 결과를 확인한 뒤 사용하세요. 최적화 과정에서 원본 EXIF/GPS 메타데이터도 대부분 제거됩니다.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><h2>이미지 최적화 FAQ</h2><p>이미지 용량을 줄이기 전에 자주 확인하는 기준입니다.</p></div>
+        <div class="faq-grid">
+          <details class="faq-item"><summary>이미지 최적화는 원본 화질을 얼마나 줄이나요?</summary><p>설정한 최대 너비와 JPG 품질에 따라 결과가 달라집니다. 화면용 이미지는 보통 70~85% 품질에서 용량과 선명도의 균형을 확인하기 좋습니다.</p></details>
+          <details class="faq-item"><summary>JPG 품질은 몇 퍼센트로 설정하는 것이 좋나요?</summary><p>블로그나 쇼핑몰 상세 이미지라면 80% 전후부터 확인해 보세요. 더 작은 용량이 필요하면 70%대까지 낮추되, 글자나 제품 경계가 흐려지는지 확인하는 것이 좋습니다.</p></details>
+          <details class="faq-item"><summary>PNG 파일도 이미지 용량을 줄일 수 있나요?</summary><p>PNG도 업로드할 수 있지만 결과는 JPG 사본으로 저장됩니다. 투명 배경이 필요한 로고나 아이콘은 결과의 배경 표시를 확인한 뒤 사용해 주세요.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- AdSense placement: 이미지 최적화 도구 하단 광고 코드 삽입 위치 -->
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><div><strong>파일도구 계산소</strong><br>이미지는 현재 브라우저에서 처리되며 서버에 저장하지 않습니다.</div><div class="footer-links"><a href="index.html">홈</a><a href="image-optimizer.html">이미지 최적화</a><a href="exif-remover.html">EXIF 제거</a><a href="logo-bw-converter.html">로고 흑백</a><a href="color-picker.html">색상 추출</a><a href="korean-counter.html">글자수</a><a href="guide.html">사용 가이드</a></div></div></footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>

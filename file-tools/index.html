@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>파일도구 계산소 - 이미지 최적화·EXIF 제거·색상 추출·글자수 계산</title>
+  <meta name="description" content="파일도구 계산소는 이미지 최적화, EXIF 제거, 로고 흑백 변환, 이미지 색상 추출, 한글 글자수 계산을 브라우저에서 바로 사용할 수 있는 무료 파일 작업 도구입니다. 입력한 파일과 텍스트는 서버에 저장하지 않습니다.">
+  <meta property="og:title" content="파일도구 계산소 - 이미지 최적화·EXIF 제거·색상 추출·글자수 계산">
+  <meta property="og:description" content="파일도구 계산소는 이미지 최적화, EXIF 제거, 로고 흑백 변환, 이미지 색상 추출, 한글 글자수 계산을 브라우저에서 바로 사용할 수 있는 무료 파일 작업 도구입니다. 입력한 파일과 텍스트는 서버에 저장하지 않습니다.">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="주요 메뉴">
+      <a class="brand" href="index.html" aria-label="파일도구 계산소 홈">
+        <img class="brand-logo" src="assets/brand/logo-filetool.png" alt="파일도구 계산소">
+      </a>
+      <div class="nav-links">
+        <a href="index.html" aria-current="page">홈</a>
+        <a href="image-optimizer.html">이미지 최적화</a>
+        <a href="exif-remover.html">EXIF 제거</a>
+        <a href="logo-bw-converter.html">로고 흑백</a>
+        <a href="color-picker.html">색상 추출</a>
+        <a href="korean-counter.html">글자수</a>
+        <a href="guide.html">사용 가이드</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">무료 파일 최적화 도구</span>
+          <h1>공유하기 전에,<br>파일부터 가볍고 안전하게</h1>
+          <p class="lead">파일도구 계산소에서 이미지 리사이즈와 EXIF 제거, 로고 흑백 변환, 색상 추출, 한글 글자수 계산까지 브라우저에서 바로 처리하세요.</p>
+          <div class="button-row">
+            <a class="btn" href="#tools">도구 선택하기</a>
+            <a class="btn btn-secondary" href="exif-remover.html">개인정보 먼저 지우기</a>
+          </div>
+          <div class="trust-pills" aria-label="서비스 신뢰 안내">
+            <span class="trust-pill">브라우저 처리</span>
+            <span class="trust-pill soft">서버 업로드 없음</span>
+            <span class="trust-pill soft">입력값 저장 없음</span>
+            <span class="trust-pill soft">무료 이용</span>
+            <span class="trust-pill soft">결과는 참고용</span>
+          </div>
+        </div>
+        <div class="hero-preview" aria-hidden="true">
+          <div class="preview-top">파일 도구 미리보기 · 결과 예시</div>
+          <div class="preview-result">
+            <span>이미지 예상 절감률</span>
+            <strong>64.8%</strong>
+            <div class="preview-bars">
+              <div class="bar"></div>
+              <div class="bar blue"></div>
+            </div>
+            <div class="mini-stack">
+              <div class="mini-metric mint"><span>이미지 최적화</span><b>리사이즈</b></div>
+              <div class="mini-metric"><span>색상 추출</span><b>HEX 복사</b></div>
+            </div>
+            <p class="small">이미지 압축, EXIF 제거, 색상 추출 결과를 브라우저에서 바로 확인하세요.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tools">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">도구 선택</span>
+          <h2>필요한 작업 도구로 바로 시작</h2>
+          <p>이미지 최적화, 개인정보 제거, 색상 추출, 글자수 계산까지 필요한 도구를 바로 선택해 주세요.</p>
+        </div>
+        <div class="tool-grid five-tools">
+          <a class="tool-card" href="image-optimizer.html">
+            <span class="tool-icon image-icon"><img src="assets/brand/icon-image-optimizer.png" alt=""></span>
+            <span class="tag">웹 업로드</span>
+            <h3>이미지 최적화</h3>
+            <p>최대 너비와 JPG 품질을 조정해 블로그, 쇼핑몰, 문서 첨부에 맞는 가벼운 이미지로 변환합니다.</p>
+            <span class="arrow">최적화하기 →</span>
+          </a>
+          <a class="tool-card" href="exif-remover.html">
+            <span class="tool-icon image-icon"><img src="assets/brand/icon-exif-remover.png" alt=""></span>
+            <span class="tag">개인정보 보호</span>
+            <h3>EXIF 제거</h3>
+            <p>사진 속 위치, 카메라 모델, 촬영 시간 같은 메타데이터를 제거해 공유용 사본을 만듭니다.</p>
+            <span class="arrow">제거하기 →</span>
+          </a>
+          <a class="tool-card" href="logo-bw-converter.html">
+            <span class="tool-icon image-icon"><img src="assets/brand/icon-logo-bw.png" alt=""></span>
+            <span class="tag">로고 작업</span>
+            <h3>로고 흑백 변환</h3>
+            <p>컬러 로고를 흑백, 그레이스케일, 단색 스타일로 변환해 인쇄물과 문서용으로 활용할 수 있습니다.</p>
+            <span class="arrow">변환하기 →</span>
+          </a>
+          <a class="tool-card" href="color-picker.html">
+            <span class="tool-icon image-icon"><img src="assets/brand/icon-color-picker.png" alt=""></span>
+            <span class="tag">색상 추출</span>
+            <h3>이미지 색상 추출</h3>
+            <p>이미지에서 주요 색상 팔레트를 추출하고 HEX/RGB 값을 복사할 수 있습니다.</p>
+            <span class="arrow">추출하기 →</span>
+          </a>
+          <a class="tool-card" href="korean-counter.html">
+            <span class="tool-icon image-icon"><img src="assets/brand/icon-korean-counter.png" alt=""></span>
+            <span class="tag">문서 작성</span>
+            <h3>한글 글자수 계산</h3>
+            <p>공백 포함/제외 글자수, UTF-8 바이트, 단어 수를 실시간으로 확인합니다.</p>
+            <span class="arrow">계산하기 →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">신뢰 안내</span>
+          <h2>결과를 이해하고 사용할 수 있도록</h2>
+          <p>작은 도구라도 처리 기준과 개인정보 보호 방식을 분명히 안내합니다.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature"><span class="feature-icon">01</span><h3>브라우저 처리 우선</h3><p>이미지 최적화와 EXIF 제거는 현재 브라우저에서 처리되며 서버로 전송하지 않습니다.</p><span class="trust-pill">입력값 저장 없음</span></div>
+          <div class="feature"><span class="feature-icon">02</span><h3>결과를 직접 확인</h3><p>원본과 변환 결과의 크기, 절감률, 미리보기를 확인한 뒤 다운로드할 수 있습니다.</p><span class="trust-pill soft">참고용 결과</span></div>
+          <div class="feature"><span class="feature-icon">03</span><h3>기능을 명확하게 분리</h3><p>이미지, 색상, 글자수 도구를 각각 독립 페이지로 나누어 목적을 바로 찾을 수 있습니다.</p><span class="trust-pill">5개 도구</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">활용 안내</span>
+          <h2>작업 전에 확인하면 좋은 기준</h2>
+        </div>
+        <div class="article-grid">
+          <a class="article-card" href="guide.html#image"><h3>이미지 품질 설정 기준</h3><p>웹 업로드용은 70~85% 품질부터 확인하는 것이 좋습니다.</p></a>
+          <a class="article-card" href="guide.html#exif"><h3>EXIF 제거 전 확인</h3><p>위치 정보와 카메라 정보가 공유 파일에 남지 않도록 사본을 내려받으세요.</p></a>
+          <a class="article-card" href="guide.html#color"><h3>브랜드 색상 확인</h3><p>로고와 이미지에서 HEX/RGB 값을 빠르게 추출할 수 있습니다.</p></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- AdSense placement: 홈 하단 광고 코드 삽입 위치 -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><strong>파일도구 계산소</strong><br>입력한 파일과 텍스트는 서버에 저장하지 않습니다. 중요한 원본은 별도로 보관해 주세요.</div>
+      <div class="footer-links">
+        <a href="index.html">홈</a>
+        <a href="image-optimizer.html">이미지 최적화</a>
+        <a href="exif-remover.html">EXIF 제거</a>
+        <a href="logo-bw-converter.html">로고 흑백</a>
+        <a href="color-picker.html">색상 추출</a>
+        <a href="korean-counter.html">글자수</a>
+        <a href="guide.html">사용 가이드</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

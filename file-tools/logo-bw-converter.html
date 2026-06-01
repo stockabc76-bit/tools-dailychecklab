@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>로고 흑백 변환 | 파일도구 계산소</title>
+  <meta name="description" content="파일도구 계산소의 로고 흑백 변환 도구는 로고 이미지를 흑백, 그레이스케일, 단색 스타일로 바꾸고 PNG로 다운로드할 수 있는 무료 브라우저 도구입니다.">
+  <meta property="og:title" content="로고 흑백 변환 | 파일도구 계산소">
+  <meta property="og:description" content="로고를 업로드하고 흑백, 그레이스케일, 단색 결과를 브라우저에서 바로 확인하세요.">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="logo">
+  <header class="site-header">
+    <nav class="nav container" aria-label="주요 메뉴">
+      <a class="brand" href="index.html"><img class="brand-logo" src="assets/brand/logo-filetool.png" alt="파일도구 계산소"></a>
+      <div class="nav-links"><a href="index.html">홈</a><a href="image-optimizer.html">이미지 최적화</a><a href="exif-remover.html">EXIF 제거</a><a href="logo-bw-converter.html" aria-current="page">로고 흑백</a><a href="color-picker.html">색상 추출</a><a href="korean-counter.html">글자수</a><a href="guide.html">사용 가이드</a></div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">로고 변환 도구</span>
+        <h1>로고를 흑백과 단색으로 바꾸세요</h1>
+        <p>컬러 로고를 흑백, 그레이스케일, 단색 스타일로 변환해 인쇄물과 문서용으로 활용할 수 있습니다.</p>
+        <div class="trust-pills"><span class="trust-pill">브라우저 처리</span><span class="trust-pill soft">서버 업로드 없음</span><span class="trust-pill soft">입력값 저장 없음</span><span class="trust-pill soft">무료 이용</span><span class="trust-pill soft">결과는 참고용</span></div>
+      </div>
+    </section>
+
+    <section class="tool-section">
+      <div class="container tool-layout">
+        <div class="panel">
+          <div id="logoDropzone" class="dropzone">
+            <div><div class="big-icon">BW</div><h2>로고 선택 또는 드래그</h2><p class="small">PNG, JPG, WebP 지원</p></div>
+            <input id="logoInput" type="file" accept="image/*" hidden>
+          </div>
+          <p id="status" class="small">로고 이미지를 선택해 주세요.</p>
+        </div>
+        <div class="panel dense-panel">
+          <h2>변환 결과</h2>
+          <div class="mode-row">
+            <button class="mode-btn active" data-logo-mode="threshold" type="button">완전 흑백</button>
+            <button class="mode-btn" data-logo-mode="gray" type="button">그레이스케일</button>
+            <button class="mode-btn" data-logo-mode="mono" type="button">단색</button>
+          </div>
+          <div class="canvas-wrap tool-canvas-wrap"><canvas id="logoCanvas"></canvas><div id="logoPlaceholder" class="placeholder-box">로고를 선택하면<br>변환 결과가 표시됩니다.</div></div>
+          <div class="actions tool-actions"><button id="downloadLogo" class="btn" disabled>변환 이미지 다운로드</button><button id="resetLogo" class="btn btn-secondary" type="button">다시 선택</button></div>
+          <div class="swatch-section"><h3>주요 색상</h3><div id="logoPalette" class="swatch-row"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="guide">
+      <div class="container">
+        <div class="section-head"><h2>사용 방법</h2><p>인쇄물, 발표자료, 흑백 문서에 맞는 로고 사본을 빠르게 만들 수 있습니다.</p></div>
+        <div class="feature-grid">
+          <div class="feature"><span class="feature-icon">1</span><h3>로고 업로드</h3><p>배경이 투명한 PNG를 사용하면 결과를 확인하기 쉽습니다.</p></div>
+          <div class="feature"><span class="feature-icon">2</span><h3>모드 선택</h3><p>완전 흑백은 선명하고, 그레이스케일은 톤을 자연스럽게 유지합니다.</p></div>
+          <div class="feature"><span class="feature-icon">3</span><h3>PNG 저장</h3><p>변환된 이미지를 PNG 파일로 다운로드합니다.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><h2>로고 흑백 변환 FAQ</h2><p>문서나 인쇄물에 맞는 로고 사본을 만들 때 참고하세요.</p></div>
+        <div class="faq-grid">
+          <details class="faq-item"><summary>컬러 로고를 흑백으로 바꾸면 어디에 활용할 수 있나요?</summary><p>계약서, 견적서, 제안서, 인쇄물처럼 컬러 사용이 부담스러운 문서에 활용할 수 있습니다. 단, 공식 로고 규정이 있다면 결과를 확인한 뒤 사용해 주세요.</p></details>
+          <details class="faq-item"><summary>그레이스케일과 단색 변환은 어떻게 다른가요?</summary><p>그레이스케일은 밝기 차이를 회색 단계로 남기고, 단색 변환은 하나의 색 계열로 정리합니다. 완전 흑백은 대비를 강하게 나누는 방식입니다.</p></details>
+          <details class="faq-item"><summary>투명 PNG 로고도 흑백으로 변환할 수 있나요?</summary><p>PNG 파일도 업로드할 수 있습니다. 다만 원본의 투명 영역과 가장자리 표현은 이미지 상태에 따라 달라질 수 있으니 다운로드 전 미리보기를 확인해 주세요.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- AdSense placement: 로고 흑백 변환 도구 하단 광고 코드 삽입 위치 -->
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><div><strong>파일도구 계산소</strong><br>이미지는 현재 브라우저에서 처리되며 서버에 저장하지 않습니다.</div><div class="footer-links"><a href="index.html">홈</a><a href="image-optimizer.html">이미지 최적화</a><a href="exif-remover.html">EXIF 제거</a><a href="logo-bw-converter.html">로고 흑백</a><a href="color-picker.html">색상 추출</a><a href="korean-counter.html">글자수</a><a href="guide.html">사용 가이드</a></div></div></footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>

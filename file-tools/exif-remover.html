@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EXIF 제거 | 파일도구 계산소</title>
+  <meta name="description" content="파일도구 계산소의 EXIF 제거 도구는 사진 속 위치 정보, 카메라 모델, 촬영 정보 같은 메타데이터를 제거한 JPG 사본을 브라우저에서 만듭니다. 입력한 파일은 서버에 저장하지 않습니다.">
+  <meta property="og:title" content="EXIF 제거 | 파일도구 계산소">
+  <meta property="og:description" content="사진 공유 전 EXIF와 위치 정보를 제거한 JPG 사본을 브라우저에서 다운로드하세요.">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/exifreader@4.37.0/dist/exif-reader.min.js"></script>
+</head>
+<body data-page="exif">
+  <header class="site-header">
+    <nav class="nav container" aria-label="주요 메뉴">
+      <a class="brand" href="index.html"><img class="brand-logo" src="assets/brand/logo-filetool.png" alt="파일도구 계산소"></a>
+      <div class="nav-links"><a href="index.html">홈</a><a href="image-optimizer.html">이미지 최적화</a><a href="exif-remover.html" aria-current="page">EXIF 제거</a><a href="logo-bw-converter.html">로고 흑백</a><a href="color-picker.html">색상 추출</a><a href="korean-counter.html">글자수</a><a href="guide.html">사용 가이드</a></div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">사진 개인정보 보호</span>
+        <h1>사진 EXIF와 위치 정보를 제거하세요</h1>
+        <p>사진을 캔버스에 다시 그린 뒤 JPG로 저장해 촬영 위치, 카메라 모델, 편집 프로그램 같은 메타데이터를 제거합니다.</p>
+        <div class="trust-pills"><span class="trust-pill">브라우저 처리</span><span class="trust-pill soft">서버 업로드 없음</span><span class="trust-pill soft">입력값 저장 없음</span><span class="trust-pill soft">무료 이용</span><span class="trust-pill soft">결과는 참고용</span></div>
+      </div>
+    </section>
+
+    <section class="tool-section">
+      <div class="container tool-layout">
+        <div class="panel">
+          <div id="exifDropzone" class="dropzone">
+            <div><div class="big-icon">GPS</div><h2>이미지 선택 또는 드래그</h2><p class="small">여러 장을 한 번에 처리할 수 있습니다.</p></div>
+            <input id="exifInput" type="file" accept="image/*" multiple hidden>
+          </div>
+          <p id="status" class="small">파일을 선택하면 EXIF를 분석합니다.</p>
+        </div>
+        <div class="panel dense-panel">
+          <h2>처리 목록</h2>
+          <div class="placeholder-list" id="exifPlaceholder">
+            <div class="placeholder-row"><strong>GPS 위치</strong><br>사진에 위치 정보가 있으면 공유 전 제거하는 것이 좋습니다.</div>
+            <div class="placeholder-row"><strong>카메라 정보</strong><br>기기 모델, 촬영 시간, 편집 도구 정보가 포함될 수 있습니다.</div>
+            <div class="placeholder-row"><strong>제거본 다운로드</strong><br>파일을 선택하면 분석 후 제거된 JPG 사본을 받을 수 있습니다.</div>
+          </div>
+          <div id="exifList" class="file-list"></div>
+          <p class="small">처리 후에는 EXIF가 제거된 JPG 사본을 다운로드합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="guide">
+      <div class="container">
+        <div class="section-head"><h2>공유 전 확인할 것</h2><p>EXIF에는 생각보다 많은 정보가 들어갈 수 있어, 공개 게시 전 제거하면 안전합니다.</p></div>
+        <div class="feature-grid">
+          <div class="feature"><span class="feature-icon">1</span><h3>메타데이터 확인</h3><p>사진에 남은 촬영 기기, 시간, GPS 같은 정보를 먼저 확인합니다.</p></div>
+          <div class="feature"><span class="feature-icon">2</span><h3>캔버스 재저장</h3><p>이미지를 새로 그려 JPG로 저장하면서 원본 메타데이터를 제외합니다.</p></div>
+          <div class="feature"><span class="feature-icon">3</span><h3>사본 사용</h3><p>원본은 보관하고, 공개 업로드에는 제거된 사본을 사용하세요.</p></div>
+        </div>
+        <div class="callout">투명 PNG는 JPG로 변환되며 투명 영역이 흰색 또는 검정색으로 보일 수 있습니다. 중요한 이미지라면 결과를 먼저 확인하세요.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><h2>EXIF 제거 FAQ</h2><p>사진을 공유하기 전에 확인하면 좋은 메타데이터 기준입니다.</p></div>
+        <div class="faq-grid">
+          <details class="faq-item"><summary>EXIF 정보에는 어떤 개인정보가 포함될 수 있나요?</summary><p>촬영 위치, 촬영 시간, 카메라 모델, 편집 프로그램 같은 정보가 포함될 수 있습니다. 사진마다 포함된 항목은 다를 수 있습니다.</p></details>
+          <details class="faq-item"><summary>사진 위치 정보만 제거할 수 있나요?</summary><p>이 도구는 이미지를 새 JPG 사본으로 다시 저장해 EXIF와 GPS 정보를 함께 제외하는 방식입니다. 특정 항목만 선택해 남기는 편집 기능은 제공하지 않습니다.</p></details>
+          <details class="faq-item"><summary>EXIF 제거 후 원본 파일은 어떻게 되나요?</summary><p>원본 파일은 브라우저 안에서 읽기만 하며 변경하지 않습니다. 다운로드되는 결과 파일은 EXIF가 제거된 새 JPG 사본입니다.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- AdSense placement: EXIF 제거 도구 하단 광고 코드 삽입 위치 -->
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><div><strong>파일도구 계산소</strong><br>이미지는 현재 브라우저에서 처리되며 서버에 저장하지 않습니다.</div><div class="footer-links"><a href="index.html">홈</a><a href="image-optimizer.html">이미지 최적화</a><a href="exif-remover.html">EXIF 제거</a><a href="logo-bw-converter.html">로고 흑백</a><a href="color-picker.html">색상 추출</a><a href="korean-counter.html">글자수</a><a href="guide.html">사용 가이드</a></div></div></footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>
