@@ -950,8 +950,8 @@ video {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: minmax(240px, 1fr) minmax(320px, auto);
-  gap: 28px;
+  grid-template-columns: minmax(280px, 1fr) minmax(360px, max-content);
+  gap: 28px 48px;
   align-items: start;
 }
 
@@ -960,6 +960,7 @@ video {
   justify-content: flex-end;
   gap: 14px;
   flex-wrap: wrap;
+  max-width: 620px;
 }
 
 .footer-brand {
@@ -1005,13 +1006,16 @@ video {
   display: grid;
   justify-items: end;
   gap: 22px;
+  min-width: 0;
 }
 
 .footer-copy {
   grid-column: 1 / -1;
+  width: 100%;
   padding-top: 22px;
   border-top: 1px solid var(--line);
   color: var(--muted);
+  justify-self: stretch;
 }
 
 .info-layout {
