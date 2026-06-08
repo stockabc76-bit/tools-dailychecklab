@@ -1,0 +1,4 @@
+interface:
+  display_name: "생활계산소 사이트 제작"
+  short_description: "생활계산소 톤으로 무료 생활 계산 도구를 추가·검수합니다."
+  default_prompt: "생활계산소 사이트에 새 계산 도구를 기존 디자인과 SEO 기준에 맞춰 추가해줘."

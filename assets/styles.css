@@ -700,6 +700,40 @@ a.tool-card:hover {
   font-size: 0.88rem;
 }
 
+.footer-related {
+  max-width: 240px;
+  margin-top: 18px;
+}
+
+.footer-related label {
+  display: block;
+  margin-bottom: 9px;
+  color: #d8e4e4;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.footer-related select {
+  width: 100%;
+  min-height: 41px;
+  padding: 0 12px;
+  border: 1px solid rgba(216, 228, 228, 0.32);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 0.87rem;
+  font-weight: 700;
+}
+
+.footer-related select:focus {
+  outline: 2px solid rgba(185, 234, 217, 0.25);
+  border-color: var(--mint-deep);
+}
+
+.footer-related option {
+  color: var(--ink);
+}
+
 .footer-links strong {
   display: block;
   margin-bottom: 11px;
@@ -767,6 +801,34 @@ a.tool-card:hover {
   background: var(--mint);
   border-radius: 16px;
   color: #28564c;
+}
+
+.contact-email a,
+.related-card a {
+  color: var(--green);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.related-card {
+  display: grid;
+  gap: 7px;
+  margin-top: 16px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fff;
+}
+
+.related-card strong {
+  color: var(--ink);
+  font-size: 1.05rem;
+}
+
+.related-card span {
+  color: var(--muted);
+  font-size: 0.94rem;
 }
 
 .tool-page {
