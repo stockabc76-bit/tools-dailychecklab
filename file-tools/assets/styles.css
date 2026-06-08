@@ -941,7 +941,7 @@ video {
 }
 
 .site-footer {
-  padding: 34px 0;
+  padding: 42px 0 30px;
   border-top: 1px solid var(--line);
   background: #fff;
   color: var(--muted);
@@ -949,16 +949,109 @@ video {
 }
 
 .footer-grid {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  align-items: center;
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) minmax(320px, auto);
+  gap: 28px;
+  align-items: start;
 }
 
 .footer-links {
   display: flex;
+  justify-content: flex-end;
   gap: 14px;
   flex-wrap: wrap;
+}
+
+.footer-brand {
+  display: grid;
+  gap: 12px;
+}
+
+.footer-logo {
+  width: 170px;
+  height: auto;
+}
+
+.footer-brand p {
+  max-width: 520px;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.related-sites {
+  display: grid;
+  gap: 8px;
+  max-width: 260px;
+}
+
+.related-sites label {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.related-sites select {
+  width: 100%;
+  min-height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-soft);
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.footer-side {
+  display: grid;
+  justify-items: end;
+  gap: 22px;
+}
+
+.footer-copy {
+  grid-column: 1 / -1;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.info-layout {
+  display: grid;
+  gap: 16px;
+}
+
+.info-card {
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.info-card h2,
+.info-card h3 {
+  margin: 0 0 12px;
+}
+
+.info-card p,
+.info-card li {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.info-card ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.contact-email {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 14px;
+  border-radius: 12px;
+  background: var(--mint);
+  color: var(--green-dark);
+  font-weight: 900;
 }
 
 .hidden { display: none !important; }
@@ -989,6 +1082,18 @@ video {
   .section-head p,
   .section-title p {
     margin-top: 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-side {
+    justify-items: start;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
   }
 }
 
