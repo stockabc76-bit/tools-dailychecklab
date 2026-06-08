@@ -1014,6 +1014,14 @@ a.tool-card:hover {
   color: var(--ink);
 }
 
+.lotto-tool-page {
+  padding-bottom: 28px;
+}
+
+.lotto-read-section {
+  padding-top: 28px;
+}
+
 .lotto-detail-card {
   margin-top: 22px;
   padding: clamp(25px, 4vw, 34px);
